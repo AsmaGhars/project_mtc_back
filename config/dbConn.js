@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.DATABASE_URI, {
@@ -10,5 +9,6 @@ const connectDB = async () => {
     console.error(error);
   }
 };
+mongoose.set("strictQuery", false);
 module.exports = connectDB;
 
