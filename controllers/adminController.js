@@ -114,3 +114,9 @@ app.put("/Specialists/:id", (req, res) => {
     res.json({ message: "Specialist updated" });
   });
 });
+//add Participant
+app.get("/participant", (req, res) => {
+  Participant.find().then((docs) => {
+    res.json({ Participant: docs });
+  });
+});
